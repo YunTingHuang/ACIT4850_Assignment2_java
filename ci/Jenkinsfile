@@ -3,23 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'echo "Hi Mike"'
-            }
-        }
-        stage('Test') {
-            steps {
-                sh 'echo "test"'
-            }
-            post {
-                always {
-                    junit 'target/surefire-reports/*.xml'
-                }
-            }
-        }
-        stage('Deliver') {
-            steps {
-                sh 'chmod +x ./ci/scripts/deliver.sh'
-                sh './ci/scripts/deliver.sh'
+                sh 'echo "Hello World"'
             }
         }
     }
