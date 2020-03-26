@@ -6,8 +6,7 @@ pipeline {
                 sh 'echo "Hi Mike"'
             }
         }
-    }
-    stage('Test') {
+        stage('Test') {
             steps {
                 sh 'mvn test'
             }
@@ -17,10 +16,11 @@ pipeline {
                 }
             }
         }
-    stage('Deliver') {
-        steps {
-            sh 'chmod +x ./ci/scripts/deliver.sh'
-            sh './ci/scripts/deliver.sh'
+        stage('Deliver') {
+            steps {
+                sh 'chmod +x ./ci/scripts/deliver.sh'
+                sh './ci/scripts/deliver.sh'
+            }
         }
     }
 }
